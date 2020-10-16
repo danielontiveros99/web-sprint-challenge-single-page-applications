@@ -1,10 +1,18 @@
 import React from "react";
+import Navigation from "./Components/Navigation";
+import {Switch, Route} from 'react-router-dom'
+import PizzaForm from "./Components/PizzaForm";
+import Home from "./Components/Home";
+
 
 const App = () => {
   return (
     <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <Navigation />
+      <Switch>
+        <Route path="/pizza-form" render={() => <PizzaForm />} />
+        <Route path="/" render={() => <Home />} />
+      </Switch>
     </>
   );
 };
